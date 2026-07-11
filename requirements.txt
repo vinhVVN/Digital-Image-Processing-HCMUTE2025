@@ -10,3 +10,6 @@ pyttsx3==2.98
 matplotlib==3.10.0
 joblib==1.4.2
 scikit-learn==1.6.0
+paddleocr
+paddlepaddle
+python-Levenshtein

@@ -94,6 +94,7 @@ pages = [
     st.Page("pages/5_XuLyAnhChuong05.py", title="Khôi phục Ảnh (C5)", icon="🔧"),
     st.Page("pages/6_XuLyAnhChuong09.py", title="Xử lý Hình thái (C9)", icon="🔬"),
     st.Page("pages/7_Sign_Language.py", title="Ngôn ngữ Kí hiệu (ASL)", icon="🖐️"),
+    st.Page("pages/8_Document_Vision_Lab.py", title="Document Vision Lab", icon="🔬"),
 ]
 
 # Tạo navigation
