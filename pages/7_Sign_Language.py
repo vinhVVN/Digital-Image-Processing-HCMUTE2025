@@ -31,7 +31,9 @@ try:
                 if isinstance(c, dict):
                     if 'batch_shape' in c:
                         c['batch_input_shape'] = c.pop('batch_shape')
-                    for k, v in c.items():
+                    if 'dtype' in c and isinstance(c['dtype'], dict) and c['dtype'].get('class_name') == 'DTypePolicy':
+                        c['dtype'] = c['dtype'].get('config', {}).get('name', 'float32')
+                    for k, v in list(c.items()):
                         fix_config(v)
                 elif isinstance(c, list):
                     for item in c:
