@@ -90,6 +90,14 @@ python MainHome.py
 ```
 
 ## 📊 Kết quả & Demo (Results & Demo)
+<img width="1105" height="855" alt="image" src="https://github.com/user-attachments/assets/894aa8d7-9b91-4638-becd-271b876bf1a0" />
+<img width="1031" height="569" alt="image" src="https://github.com/user-attachments/assets/a4bf9416-0ddf-449d-a4e1-cfbc1faca6b0" />
+<img width="1078" height="1028" alt="image" src="https://github.com/user-attachments/assets/61df245e-a492-4823-989a-6da98c2e5d80" />
+<img width="1047" height="831" alt="image" src="https://github.com/user-attachments/assets/1c5c2c14-f7c0-4a2e-bad1-577e359b7562" />
+<img width="1012" height="625" alt="image" src="https://github.com/user-attachments/assets/6c613c05-2482-4108-b820-639e3d28c9fb" />
+<img width="1049" height="609" alt="image" src="https://github.com/user-attachments/assets/1101588d-c362-4804-bce0-900828b10808" />
+<img width="1104" height="748" alt="image" src="https://github.com/user-attachments/assets/7d34732e-fcc5-482a-a759-e6810e4513e9" />
+
 
 ---
 *Được xây dựng với niềm đam mê dành cho Computer Vision và AI Engineering.*
