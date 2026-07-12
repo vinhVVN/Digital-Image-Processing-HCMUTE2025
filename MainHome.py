@@ -1,7 +1,24 @@
+import os
+import sys
+try:
+    from importlib.metadata import version
+    bad_cv = False
+    try:
+        version("opencv-python")
+        bad_cv = True
+    except: pass
+    try:
+        version("opencv-contrib-python")
+        bad_cv = True
+    except: pass
+    if bad_cv:
+        os.system(f"{sys.executable} -m pip uninstall -y opencv-python opencv-contrib-python")
+except Exception:
+    pass
+
 import streamlit as st
 import base64
 from pathlib import Path
-
 st.set_page_config(
     page_title="Xử lý Ảnh Số - Trang chủ",
     layout="wide",
