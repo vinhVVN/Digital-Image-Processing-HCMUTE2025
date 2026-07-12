@@ -44,7 +44,7 @@ try:
 except Exception as e:
     print("Error patching model:", e)
 
-model = tf.keras.models.load_model(MODEL_PATH)
+model = tf.keras.models.load_model(MODEL_PATH, compile=False)
 with open(SVM_MODEL_PATH, 'rb') as f:
     le = pickle.load(f)
 
