@@ -1,5 +1,7 @@
 import os
 import sys
+import subprocess
+
 try:
     from importlib.metadata import version
     bad_cv = False
@@ -11,9 +13,12 @@ try:
         version("opencv-contrib-python")
         bad_cv = True
     except: pass
+
     if bad_cv:
-        os.system(f"{sys.executable} -m pip uninstall -y opencv-python opencv-contrib-python")
-except Exception:
+        subprocess.check_call([sys.executable, "-m", "pip", "uninstall", "-y", "opencv-python", "opencv-contrib-python", "opencv-python-headless"])
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "opencv-python-headless==4.10.0.84"])
+except Exception as e:
+    print("OpenCV fix error:", e)
     pass
 
 import streamlit as st
