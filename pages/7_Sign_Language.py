@@ -16,6 +16,32 @@ SL_MODEL_DIR = Path(__file__).parent / 'Source' / 'SignLanguage'
 SVM_MODEL_PATH = SL_MODEL_DIR / 'label_encoder.pkl'
 MODEL_PATH = SL_MODEL_DIR / 'ASL_model.h5'
 
+# Patch model config for Keras 3 to Keras 2 backward compatibility
+try:
+    import h5py
+    import json
+    with h5py.File(MODEL_PATH, 'r+') as f:
+        if 'model_config' in f.attrs:
+            config_str = f.attrs['model_config']
+            if isinstance(config_str, bytes):
+                config_str = config_str.decode('utf-8')
+            config = json.loads(config_str)
+            
+            def fix_config(c):
+                if isinstance(c, dict):
+                    if 'batch_shape' in c:
+                        c['batch_input_shape'] = c.pop('batch_shape')
+                    for k, v in c.items():
+                        fix_config(v)
+                elif isinstance(c, list):
+                    for item in c:
+                        fix_config(item)
+                        
+            fix_config(config)
+            f.attrs['model_config'] = json.dumps(config).encode('utf-8')
+except Exception as e:
+    print("Error patching model:", e)
+
 model = tf.keras.models.load_model(MODEL_PATH)
 with open(SVM_MODEL_PATH, 'rb') as f:
     le = pickle.load(f)
