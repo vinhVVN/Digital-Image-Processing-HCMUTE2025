@@ -1,7 +1,7 @@
 streamlit
 streamlit-webrtc
 pillow
-tensorflow
+tensorflow<2.16.0
 numpy<2.0.0
 mediapipe==0.10.14
 av
